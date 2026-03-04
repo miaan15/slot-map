@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <slot_map.cpp>
+#include <slot_map.hpp>
 
 #include <algorithm>
 #include <numeric>
