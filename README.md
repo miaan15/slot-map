@@ -1,17 +1,15 @@
 # Slot Map
 
-A header-only C++17 implementation of the *slot map* data structure.
+A header-only C++17 implementation of the **slot map** data structure.
 
-Widely used in ECS implementation
+Widely used in ECS
 
 ## Features
 
 - O(1) insertion, deletion, and lookup
-- Stable key handles that remain valid across insertions and deletions
-- Generational safety - stale keys from erased elements are detected
+- Stable key handles that remain valid across insertions and deletions by generational safety
 - Contiguous data storage for cache-friendly iteration
-- Header-only - no compilation required for library usage
-- Customizable container types via template parameters
+- Standard convention implementation
 
 ## Building
 
