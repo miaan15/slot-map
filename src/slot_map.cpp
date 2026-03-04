@@ -131,7 +131,7 @@ struct slot_map {
         data_map.emplace_back(next_slot_index);
 
         if (next_slot_index == slots.size()) {
-            slots.emplace_back(next_slot_index + 1, generation_type{});
+            slots.emplace_back(slot_type{next_slot_index + 1, generation_type{}});
             // set index = next_slot_index + 1 for later next_slot_index assignment
         }
 
@@ -212,7 +212,10 @@ struct slot_map {
     constexpr auto clear() -> void {
         data.clear();
         data_map.clear();
-        slots.clear();
+        for (size_type i = 0; i < slots.size(); ++i) {
+            ++slots[i].gen;
+            slots[i].index = i + 1;
+        }
         next_slot_index = 0;
     }
 
